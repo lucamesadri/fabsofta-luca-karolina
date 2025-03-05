@@ -24,3 +24,7 @@ Karolina Ferreira
     - Funcionalidade 16 Editar filmes do sistema(Admin)
     - Funcionalidade 17 Deletar filmes do sistema(Admin)
 
+### Criar um branch a partir da branch atual
+```
+git checkout -b branch-luca
+```
