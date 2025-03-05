@@ -24,3 +24,12 @@ Karolina Ferreira
     - Funcionalidade 16 Editar filmes do sistema(Admin)
     - Funcionalidade 17 Deletar filmes do sistema(Admin)
 
+
+
+## Criar um branch a partir da branch atual
+git checkout -b branch-karolina 
+gitignore - negocio que ignora os arquivos indesejados do repositorio, e não manda pro git
+
+- JRE - Java Runtime Environment
+    - Maquina Virtual do Java:  Intrepreta o bytecode do java para linguagem de máquina.
+- JDK - Java Development Kit: Compilar o código Java em bytecode (arquivo .class).
