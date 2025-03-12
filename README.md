@@ -61,3 +61,12 @@ gitignore - negocio que ignora os arquivos indesejados do repositorio, e não ma
 - JRE - Java Runtime Environment
     - Maquina Virtual do Java:  Intrepreta o bytecode do java para linguagem de máquina.
 - JDK - Java Development Kit: Compilar o código Java em bytecode (arquivo .class).
+
+### Criação de projeto no VSCODE com maven 
+- Teclar F1
+- Digitar Java e escolher a opção new java project
+- Project type: MAVEN
+- Archetype: No archetype
+- Pacote digitar dominio ao contrario ex: br.univille
+- Nome do projeto em minusculo
+- Usar a pasta sugerida pelo Vscode
