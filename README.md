@@ -28,3 +28,12 @@ Karolina Ferreira
 ```
 git checkout -b branch-luca
 ```
+
+### Criação de projeto no VSCode com Maven
+1) teclar F1
+2) digitar Java e escolher a opção create new java project
+3) project type: MAVEN
+4) Archetype: No Archetype
+5) pacote digitar domínio ao contrário ex: br.univille
+6) nome do projeto em minúsculo
+7) usar a pasta sugerida pelo vscode
