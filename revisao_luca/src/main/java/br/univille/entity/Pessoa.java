@@ -1,11 +1,14 @@
 package br.univille.entity;
 
+import java.util.ArrayList;
+
 public class Pessoa {
     //atributo(variável)
     private long id;
     private String nome; 
     private String endereco;
     private Cidade cidade;
+    private ArrayList<Pokemon> listaPokemon = new ArrayList<Pokemon>();
 
     //Construtor (mesmo nome da classe, não tem retorno)
     public Pessoa(String nome) {
@@ -46,6 +49,13 @@ public class Pessoa {
         this.cidade = cidade;
     }
     
+    public ArrayList<Pokemon> getListaPokemon() {
+        return listaPokemon;
+    }
+    public void setListaPokemon(ArrayList<Pokemon> listaPokemon) {
+        this.listaPokemon = listaPokemon;
+    }
+
     //Sobreescrita de método (overwrite)
     @Override
     public String toString(){
