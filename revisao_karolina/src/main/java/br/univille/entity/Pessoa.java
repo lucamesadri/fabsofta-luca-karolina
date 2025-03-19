@@ -1,5 +1,5 @@
 package br.univille.entity;
-
+import java.util.ArrayList;
 
 public class Pessoa {
                     /*informação*/
@@ -7,6 +7,8 @@ public class Pessoa {
     private Long id;
     private String endereco;
     private Cidade cidade;
+
+    private ArrayList listaPokemon = new ArrayList<Pokemon>(); /*<> genericios, tipo do dado da lista */
 
     public Cidade getCidade() {
         return cidade;
@@ -50,10 +52,18 @@ public class Pessoa {
     public void setNome(String nome) { /*variavel guarda a info, o metódo guarda a ação */
         this.nome = nome;
     }
-    /*/Sobreescrita de metódo */
-    // public String toString(){
-    //     return getNome();
-    // }
+  
+     public String toString(){
+         return getNome();
+    }
+
+    public ArrayList<Pokemon> getListaPokemon() {
+        return listaPokemon;
+    }
+
+    public void setListaPokemon(ArrayList<Pokemon> listaPokemon) {
+        this.listaPokemon = listaPokemon;
+    }
 
 }
 
