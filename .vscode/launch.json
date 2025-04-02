@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ProjfabsoftSistemadefilmesApplication<projfabsoft-sistemadefilmes>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.univille.projfabsoft_sistemadefilmes.ProjfabsoftSistemadefilmesApplication",
+            "projectName": "projfabsoft-sistemadefilmes",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
