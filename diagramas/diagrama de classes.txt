@@ -1,0 +1,62 @@
+@startuml
+package br.univille.projfabsoft_sistemadefilmes.entity {
+
+    class Usuario {
+        - Long id
+        - String nome
+        - String email
+        - String senha
+        -- 
+        + List<Avaliacao> avaliacoes
+        + List<Resenha> resenhas
+        + List<Usuario> amigos
+        + List<Filme> watchlist
+    }
+
+    class Filme {
+        - Long id
+        - String titulo
+        - String genero
+        - int anoLancamento
+        - String elenco
+        --
+        + List<Avaliacao> avaliacoes
+        + List<Resenha> resenhas
+    }
+
+    class Avaliacao {
+        - Long id
+        - int nota
+        - String comentario
+        - LocalDate data
+        --
+        + Usuario usuario
+        + Filme filme
+    }
+
+    class Resenha {
+        - Long id
+        - String texto
+        - LocalDate data
+        --
+        + Usuario usuario
+        + Filme filme
+    }
+
+    class Amizade {
+        - Long id
+        - Usuario solicitante
+        - Usuario solicitado
+        - String status
+    }
+
+    Usuario "1" -- "0..*" Avaliacao : avalia
+    Usuario "1" -- "0..*" Resenha : escreve
+    Usuario "0..*" -- "0..*" Usuario : amigos
+    Usuario "0..*" -- "0..*" Filme : watchlist
+    Filme "1" -- "0..*" Avaliacao : recebe
+    Filme "1" -- "0..*" Resenha : recebe
+    Usuario "1" -- "0..*" Amizade : solicita
+    Usuario "1" -- "0..*" Amizade : é solicitado
+}
+@enduml
