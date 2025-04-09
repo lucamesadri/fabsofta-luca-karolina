@@ -14,16 +14,16 @@ public class Usuario {
     private String email;
     private String senha;
 
-    @OneToMany(mappedBy = "usuario")
+    @OneToMany(mappedBy = "usuario", cascade ={CascadeType.MERGE, CascadeType.REFRESH})
     private List<Avaliacao> avaliacoes;
 
-    @OneToMany(mappedBy = "usuario")
+    @OneToMany(mappedBy = "usuario", cascade ={CascadeType.MERGE, CascadeType.REFRESH})
     private List<Resenha> resenhas;
 
-    @ManyToMany
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
     private List<Usuario> amigos;
 
-    @ManyToMany
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
     private List<Filme> watchlist;
 
     // Getters e Setters

@@ -15,10 +15,10 @@ public class Filme {
     private int anoLancamento;
     private String elenco;
 
-    @OneToMany(mappedBy = "filme")
+    @OneToMany(mappedBy = "filme", cascade = CascadeType.ALL)
     private List<Avaliacao> avaliacoes;
 
-    @OneToMany(mappedBy = "filme")
+    @OneToMany(mappedBy = "filme", cascade = CascadeType.ALL)
     private List<Resenha> resenhas;
 
     // Getters e Setters

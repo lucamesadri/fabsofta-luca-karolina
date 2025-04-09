@@ -18,10 +18,10 @@ public class Resenha {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date data;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
     private Usuario usuario;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
     private Filme filme;
 
     // Getters e Setters
