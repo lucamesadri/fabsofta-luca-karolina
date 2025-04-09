@@ -1,7 +1,10 @@
 package br.univille.projfabsoft_sistemadefilmes.entity;
 
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 public class Resenha {
@@ -11,7 +14,9 @@ public class Resenha {
     private Long id;
 
     private String texto;
-    private LocalDate data;
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date data;
 
     @ManyToOne
     private Usuario usuario;
@@ -20,4 +25,43 @@ public class Resenha {
     private Filme filme;
 
     // Getters e Setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTexto() {
+        return texto;
+    }
+
+    public void setTexto(String texto) {
+        this.texto = texto;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Filme getFilme() {
+        return filme;
+    }
+
+    public void setFilme(Filme filme) {
+        this.filme = filme;
+    }
 }

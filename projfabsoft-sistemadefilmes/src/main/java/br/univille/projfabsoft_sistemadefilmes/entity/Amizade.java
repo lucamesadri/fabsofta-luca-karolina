@@ -18,4 +18,35 @@ public class Amizade {
     private String status;
 
     // Getters e Setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Usuario getSolicitante() {
+        return solicitante;
+    }
+
+    public void setSolicitante(Usuario solicitante) {
+        this.solicitante = solicitante;
+    }
+
+    public Usuario getSolicitado() {
+        return solicitado;
+    }
+
+    public void setSolicitado(Usuario solicitado) {
+        this.solicitado = solicitado;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }
