@@ -1,7 +1,14 @@
 package br.univille.projfabsoft_sistemadefilmes.entity;
 
-import jakarta.persistence.*;
 import java.util.List;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Usuario {
@@ -20,10 +27,10 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario", cascade ={CascadeType.MERGE, CascadeType.REFRESH})
     private List<Resenha> resenhas;
 
-    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
+    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
     private List<Usuario> amigos;
 
-    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
+    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
     private List<Filme> watchlist;
 
     // Getters e Setters
