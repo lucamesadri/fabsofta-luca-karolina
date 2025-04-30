@@ -3,11 +3,12 @@ package br.univille.projfabsoft_sistemadefilmes.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import br.univille.projfabsoft_sistemadefilmes.entity.Usuario;
 import br.univille.projfabsoft_sistemadefilmes.repository.UsuarioRepository;
 import br.univille.projfabsoft_sistemadefilmes.service.UsuarioService;
-
+@Service
 public class UsuarioServiceImpl implements UsuarioService {
 
     @Autowired

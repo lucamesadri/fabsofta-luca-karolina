@@ -1,0 +1,29 @@
+### Teste GET API Filme GET
+
+GET http://localhost:8080/api/v1/usuario
+
+
+### Teste POST API Usuario GET
+
+POST http://localhost:8080/api/v1/usuario
+Content-Type: application/json 
+
+{
+    "nome": "José da Silva",
+    "email": "josesilva@gmail.com",
+    "senha": "12345"
+}
+
+### API Filme - PUT 
+PUT http://localhost:8080/api/v1/usuario/1
+Content-Type: application/json 
+
+{
+    "nome": "José da Silva Alterado",
+    "email": "josesilva@gmail.com",
+    "senha": "12345"
+}
+
+### API Filme - DELETE 
+DELETE http://localhost:8080/api/v1/usuario/1 
+Content-Type: application/json
