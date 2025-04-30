@@ -13,3 +13,22 @@ Content-Type: application/json
     "anoLancamento": "2025",
     "elenco": "Teste Elenco"
 }
+
+
+
+### API CLIENTE - PUT 
+PUT http://localhost:8080/api/v1/filmes/1
+Content-Type: application/json 
+
+{
+    "titulo": "Teste Filme Teste blabla",
+    "genero": "Teste Genero Filme",
+    "anoLancamento": "2025",
+    "elenco": "Teste Elenco"
+}
+
+
+### API CLIENTE - DELETE 
+DELETE http://localhost:8080/api/v1/filmes/1 
+Content-Type: application/json
+
