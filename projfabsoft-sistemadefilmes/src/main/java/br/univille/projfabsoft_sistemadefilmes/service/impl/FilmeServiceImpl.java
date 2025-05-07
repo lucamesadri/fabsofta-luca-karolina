@@ -19,13 +19,11 @@ public class FilmeServiceImpl implements FilmeService{
 
     @Override
     public List<Filme> getAll() {
-        // TODO Auto-generated method stub
         return repository.findAll();
     }
 
     @Override
     public Filme getById(long id) {
-        // TODO Auto-generated method stub
         var retorno = repository.findById(id);
         if(retorno.isPresent())
             return retorno.get();
@@ -34,7 +32,6 @@ public class FilmeServiceImpl implements FilmeService{
 
     @Override
     public Filme delete(long id) {
-        // TODO Auto-generated method stub
         var filme = getById(id);
         if(filme != null)
             repository.deleteById(id);
