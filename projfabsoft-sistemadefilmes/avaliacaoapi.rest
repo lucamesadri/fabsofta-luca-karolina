@@ -1,0 +1,41 @@
+### Teste GET API Avaliacao GET
+
+GET http://localhost:8080/api/v1/avaliacoes
+
+
+### Teste POST API Avaliacao POST
+
+POST http://localhost:8080/api/v1/avaliacoes
+Content-Type: application/json 
+
+{
+    "nota": 5,
+    "comentario": "Ótimo filme!",
+    "data": "2023-12-01",
+    "usuario": {
+        "id": 1
+    },
+    "filme": {
+        "id": 1
+    }
+}
+
+### API Avaliacao - PUT 
+PUT http://localhost:8080/api/v1/avaliacoes/1
+Content-Type: application/json 
+
+{
+    "nota": 4,
+    "comentario": "Muito bom, mas poderia ser melhor.",
+    "data": "2023-12-02",
+    "usuario": {
+        "id": 1
+    },
+    "filme": {
+        "id": 1
+    }
+}
+
+### API Avaliacao - DELETE 
+DELETE http://localhost:8080/api/v1/avaliacoes/1
+Content-Type: application/json

@@ -1,0 +1,39 @@
+### Teste GET API Resenha GET
+
+GET http://localhost:8080/api/v1/resenhas
+
+
+### Teste POST API Resenha POST
+
+POST http://localhost:8080/api/v1/resenhas
+Content-Type: application/json 
+
+{
+    "texto": "Uma análise detalhada do filme.",
+    "data": "2023-12-01",
+    "usuario": {
+        "id": 1
+    },
+    "filme": {
+        "id": 1
+    }
+}
+
+### API Resenha - PUT 
+PUT http://localhost:8080/api/v1/resenhas/1
+Content-Type: application/json 
+
+{
+    "texto": "Uma análise revisada do filme.",
+    "data": "2023-12-02",
+    "usuario": {
+        "id": 1
+    },
+    "filme": {
+        "id": 1
+    }
+}
+
+### API Resenha - DELETE 
+DELETE http://localhost:8080/api/v1/resenhas/1
+Content-Type: application/json
