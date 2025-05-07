@@ -29,11 +29,19 @@ Content-Type: application/json
     "comentario": "Muito bom, mas poderia ser melhor.",
     "data": "2023-12-02",
     "usuario": {
-        "id": 1
-    },
+    "id": 1,
+    "nome": "José da Silva Alterado",
+    "email": "josesilva@gmail.com",
+    "senha": "12345",
+    "watchlist": []
+  },
     "filme": {
-        "id": 1
-    }
+    "id": 1,
+    "titulo": "Teste Filme Teste blabla",
+    "genero": "Teste Genero Filme",
+    "anoLancamento": 2025,
+    "elenco": "Teste Elenco"
+  }
 }
 
 ### API Avaliacao - DELETE 

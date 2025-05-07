@@ -15,12 +15,6 @@ public class Filme {
     private int anoLancamento;
     private String elenco;
 
-    @OneToMany(mappedBy = "filme", cascade = CascadeType.ALL)
-    private List<Avaliacao> avaliacoes;
-
-    @OneToMany(mappedBy = "filme", cascade = CascadeType.ALL)
-    private List<Resenha> resenhas;
-
     // Getters e Setters
     public long getId() {
         return id;
@@ -62,19 +56,4 @@ public class Filme {
         this.elenco = elenco;
     }
 
-    public List<Avaliacao> getAvaliacoes() {
-        return avaliacoes;
-    }
-
-    public void setAvaliacoes(List<Avaliacao> avaliacoes) {
-        this.avaliacoes = avaliacoes;
-    }
-
-    public List<Resenha> getResenhas() {
-        return resenhas;
-    }
-
-    public void setResenhas(List<Resenha> resenhas) {
-        this.resenhas = resenhas;
-    }
 }

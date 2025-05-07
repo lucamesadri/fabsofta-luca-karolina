@@ -10,11 +10,19 @@ Content-Type: application/json
 
 {
     "solicitante": {
-        "id": 1
-    },
+    "id": 1,
+    "nome": "José da Silva Alterado",
+    "email": "josesilva@gmail.com",
+    "senha": "12345",
+    "watchlist": []
+  },
     "solicitado": {
-        "id": 2
-    },
+    "id": 2,
+    "nome": "José da Silva",
+    "email": "josesilva@gmail.com",
+    "senha": "12345",
+    "watchlist": []
+  },
     "status": "pendente"
 }
 
@@ -24,11 +32,19 @@ Content-Type: application/json
 
 {
     "solicitante": {
-        "id": 1
-    },
+    "id": 1,
+    "nome": "José da Silva Alterado",
+    "email": "josesilva@gmail.com",
+    "senha": "12345",
+    "watchlist": []
+  },
     "solicitado": {
-        "id": 2
-    },
+    "id": 2,
+    "nome": "José da Silva",
+    "email": "josesilva@gmail.com",
+    "senha": "12345",
+    "watchlist": []
+  },
     "status": "aceito"
 }
 

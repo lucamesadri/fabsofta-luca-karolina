@@ -22,15 +22,6 @@ public class Usuario {
     private String email;
     private String senha;
 
-    @OneToMany(mappedBy = "usuario", cascade ={CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.EAGER)
-    private List<Avaliacao> avaliacoes;
-
-    @OneToMany(mappedBy = "usuario", cascade ={CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.EAGER)
-    private List<Resenha> resenhas;
-
-    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.EAGER)
-    private List<Usuario> amigos;
-
     @OneToMany(cascade = {CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.EAGER)
     private List<Filme> watchlist;
 
@@ -65,30 +56,6 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-
-    public List<Avaliacao> getAvaliacoes() {
-        return avaliacoes;
-    }
-
-    public void setAvaliacoes(List<Avaliacao> avaliacoes) {
-        this.avaliacoes = avaliacoes;
-    }
-
-    public List<Resenha> getResenhas() {
-        return resenhas;
-    }
-
-    public void setResenhas(List<Resenha> resenhas) {
-        this.resenhas = resenhas;
-    }
-
-    public List<Usuario> getAmigos() {
-        return amigos;
-    }
-
-    public void setAmigos(List<Usuario> amigos) {
-        this.amigos = amigos;
     }
 
     public List<Filme> getWatchlist() {
