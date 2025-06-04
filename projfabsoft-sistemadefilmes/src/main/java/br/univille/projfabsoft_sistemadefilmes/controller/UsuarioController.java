@@ -15,7 +15,7 @@ import br.univille.projfabsoft_sistemadefilmes.entity.Usuario;
 import br.univille.projfabsoft_sistemadefilmes.service.UsuarioService;
 
 @RestController
-@RequestMapping("/api/v1/usuario")
+@RequestMapping("/api/v1/usuarios")
 
 public class UsuarioController {
 
