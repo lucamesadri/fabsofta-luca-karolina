@@ -4,9 +4,10 @@ import { UsuarioService } from '../service/usuario.service';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-usuario',
-  imports: [HttpClientModule, CommonModule],
+  imports: [HttpClientModule, CommonModule, RouterLink],
   templateUrl: './usuario.component.html',
   styleUrl: './usuario.component.css',
   providers: [UsuarioService]
