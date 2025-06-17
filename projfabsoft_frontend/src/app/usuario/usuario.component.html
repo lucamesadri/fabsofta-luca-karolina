@@ -1,12 +1,14 @@
 <main class="container">
     <h2>Usuarios</h2>
-    <a routerLink="/usuarios/novo" class="btn btn-primary">Novo</a>
+    <a (click)="novo()" class="btn btn-primary">Novo</a>
     <table>
         <thead>
             <tr *ngFor='let umUsuario of listaUsuarios'>
                 <th>{{umUsuario.nome}}</th>
                 <th>{{umUsuario.email}}</th>
                 <th>{{umUsuario.senha}}</th>
+                <td><a (click)="alterar(umUsuario)"
+                    class="btn btn-secondary">Alterar</a></td>
             </tr>
         </thead>
     </table>
