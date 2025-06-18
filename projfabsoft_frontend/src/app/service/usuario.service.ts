@@ -14,6 +14,11 @@ export class UsuarioService {
   getUsuarios(){
     return this.http.get<Usuario[]>(this.apiURL);
   }
+  getUsuarioById(id: any){
+    return this.http.get<Usuario>(this.apiURL + '/' + id);
+    
+
+  }
   saveUsuario(usuario:Usuario){
     if(usuario.id){
       return this.http.put(this.apiURL + '/' + usuario.id, usuario);
@@ -21,7 +26,9 @@ export class UsuarioService {
     return this.http.post(this.apiURL,usuario);
   }
 
-  getUsuarioById(id: any){
-    return this.http.get<Usuario>(this.apiURL + '/' + id);
+  excluirUsuario(id: any){
+    return this.http.delete<Usuario>(this.apiURL + '/' + id);
   }
+
+
 }
