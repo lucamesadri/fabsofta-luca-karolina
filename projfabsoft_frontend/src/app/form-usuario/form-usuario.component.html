@@ -1,14 +1,25 @@
-<main class= "container">
-    <h2> Usuario</h2>
-    <div class = "card">
-        <div class = "card-body">
-            <div class ="form-group">
-                <label for = "">Nome</label>
-                <input type="text" class = "form-control" id = "txtNome">
-                <input type = "text" [(ngModel)]="usuario.nome" class = "form-control" id = "txtNome">
+<main class="container">
+    <h2>Usuário</h2>
+    <div class="card">
+        <div class="card-body">
+
+            <div class="form-group mb-3">
+                <label for="txtNome">Nome</label>
+                <input type="text" [(ngModel)]="usuario.nome" class="form-control" id="txtNome" />
             </div>
+
+            <div class="form-group mb-3">
+                <label for="txtEmail">E-mail</label>
+                <input type="email" [(ngModel)]="usuario.email" class="form-control" id="txtEmail" />
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="txtSenha">Senha</label>
+                <input type="password" [(ngModel)]="usuario.senha" class="form-control" id="txtSenha" />
+            </div>
+
         </div>
 
-        <button (click)="salvar()" class = "btn btn-primary">Salvar</button>
+        <button (click)="salvar()" class="btn btn-primary">Salvar</button>
     </div>
 </main>
