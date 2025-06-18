@@ -17,6 +17,7 @@ export class UsuarioComponent {
 
   public listaUsuarios: Usuario[] = [];
 
+
   @ViewChild('myModal') modalElement!: ElementRef;
   private modal!: bootstrap.Modal;
 
@@ -26,6 +27,7 @@ export class UsuarioComponent {
     private usuarioService: UsuarioService,
     private router: Router
   ) {}
+
 
   ngOnInit(): void {
     this.usuarioService.getUsuarios().subscribe(resposta => {
