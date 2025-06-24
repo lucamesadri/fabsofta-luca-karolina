@@ -30,9 +30,12 @@ export class FormFilmeComponent {
     }
   }
 
-  salvar() {
-    this.filmeService.saveFilme(this.filme).subscribe(res => {
-      this.router.navigate(['filmes']);
-    });
-  }
+salvar() {
+  console.log('filme enviado:', this.filme);
+  this.filmeService.saveFilme(this.filme).subscribe({
+    next: () => this.router.navigate(['filmes']),
+    error: err => console.error('Erro no salvar:', err)
+  });
+}
+
 }
