@@ -5,16 +5,20 @@
         <thead>
             <tr>
                 <th>Título</th>
-                <th>Diretor</th>
-                <th>Ano</th>
+                <th>Gênero</th>
+                <th>Ano de Lancamento</th>
+                <th>elenco</th>
+
                 <th></th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let umFilme of listaFilmes">
                 <td>{{ umFilme.titulo }}</td>
-                <td>{{ umFilme.diretor }}</td>
-                <td>{{ umFilme.ano }}</td>
+                <td>{{ umFilme.genero }}</td>
+                <td>{{ umFilme.anoLancamento }}</td>
+                <td>{{ umFilme.elenco }}</td>
+
                 <td>
                     <a (click)="alterar(umFilme)" class="btn btn-secondary">Alterar</a>
                     &nbsp;

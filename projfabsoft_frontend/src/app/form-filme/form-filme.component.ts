@@ -13,7 +13,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   styleUrl: './form-filme.component.css',
   providers: [FilmeService, Router]
 })
-export class FormUsuarioComponent {
+export class FormFilmeComponent {
   filme: Filme = new Filme();
 
   constructor(
