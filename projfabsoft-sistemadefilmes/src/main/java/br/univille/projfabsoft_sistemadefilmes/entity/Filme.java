@@ -12,7 +12,7 @@ public class Filme {
 
     private String titulo;
     private String genero;
-    private int anoLancamento;
+    private String anoLancamento;
     private String elenco;
 
     // Getters e Setters
@@ -40,11 +40,11 @@ public class Filme {
         this.genero = genero;
     }
 
-    public int getAnoLancamento() {
+    public String getAnoLancamento() {
         return anoLancamento;
     }
 
-    public void setAnoLancamento(int anoLancamento) {
+    public void setAnoLancamento(String anoLancamento) {
         this.anoLancamento = anoLancamento;
     }
 
