@@ -1,0 +1,45 @@
+<main class="container">
+    <h2>Avaliações</h2>
+    <a (click)="novo()" class="btn btn-primary">Novo</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nota</th>
+                <th>Comentário</th>
+                <th>Data Avaliação</th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umAvaliacao of listaAvaliacoes">
+                <td>{{ umAvaliacao.nota }}</td>
+                <td>{{ umAvaliacao.comentario }}</td>
+                <td>{{ umAvaliacao.data }}</td>
+
+                <td>
+                    <a (click)="alterar(umAvaliacao)" class="btn btn-secondary">Alterar</a>
+                    &nbsp;
+                    <a (click)="abrirConfirmacao(umAvaliacao)" class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+
+<div class="modal fade" #myModal tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Excluir Avaliação</h5>
+            </div>
+            <div class="modal-body">
+                Confirma a exclusão da avaliação?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+                <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
+            </div>
+        </div>
+    </div>
+</div>

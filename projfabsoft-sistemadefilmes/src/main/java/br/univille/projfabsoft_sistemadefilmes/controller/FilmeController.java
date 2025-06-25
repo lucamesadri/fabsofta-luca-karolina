@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import br.univille.projfabsoft_sistemadefilmes.entity.Filme;
+import br.univille.projfabsoft_sistemadefilmes.entity.Avaliacao;
 import br.univille.projfabsoft_sistemadefilmes.service.FilmeService;
 
 @RestController
@@ -30,6 +31,15 @@ public class FilmeController {
             return ResponseEntity.notFound().build();
         }
         return new ResponseEntity<>(filme, HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}/avaliacoes")
+    public ResponseEntity<List<Avaliacao>> getAvaliacoesByFilmeId(@PathVariable Long id) {
+        var filme = service.getById(id);
+        if (filme == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return new ResponseEntity<>(filme.getAvaliacoes(), HttpStatus.OK);
     }
 
     @PostMapping

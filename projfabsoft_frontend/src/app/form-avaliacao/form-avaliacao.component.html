@@ -1,0 +1,25 @@
+<main class="container">
+  <h2>Avaliações</h2>
+  <div class="card">
+    <div class="card-body">
+
+      <div class="form-group mb-3">
+        <label for="txtTitulo">Nota</label>
+        <input type="text" [(ngModel)]="avaliacao.nota" class="form-control" id="txtTitulo" />
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="txtGenero">Comentário</label>
+        <input type="text" [(ngModel)]="avaliacao.comentario" class="form-control" id="txtGenero" />
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="txtAnoLancamento">Data da avaliação</label>
+        <input type="date" [(ngModel)]="avaliacao.data" class="form-control" id="txtAnoLancamento" />
+      </div>
+
+    </div>
+
+    <button (click)="salvar()" class="btn btn-primary">Salvar</button>
+  </div>
+</main>
