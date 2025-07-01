@@ -1,6 +1,10 @@
 export class Usuario {
-    id: number;
-    nome: string;
-    email: string;
-    senha: string;
+  id?: number;
+  nome?: string;
+  email?: string;
+  senha?: string;
+
+  constructor(init?: Partial<Usuario>) {
+    Object.assign(this, init);
+  }
 }

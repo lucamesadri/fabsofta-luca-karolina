@@ -15,7 +15,7 @@ Content-Type: application/json
 }
 
 ### API Filme - PUT 
-PUT http://localhost:8080/api/v1/usuarios/1
+PUT http://localhost:8080/api/v1/usuarios/6
 Content-Type: application/json 
 
 {
@@ -25,5 +25,5 @@ Content-Type: application/json
 }
 
 ### API Filme - DELETE 
-DELETE http://localhost:8080/api/v1/usuarios/1
+DELETE http://localhost:8080/api/v1/usuarios/5
 Content-Type: application/json

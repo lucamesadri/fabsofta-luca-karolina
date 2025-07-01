@@ -9,5 +9,5 @@ public interface FilmeService {
     List<Filme> getAll();
     Filme getById(long id);
     Filme delete(long id);
-
+    // Não precisa adicionar nada novo aqui se for usar o save normal
 }

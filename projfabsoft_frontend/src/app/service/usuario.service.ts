@@ -1,34 +1,32 @@
 import { Injectable } from '@angular/core';
 import { Usuario } from '../model/usuario';
 import { HttpClient } from '@angular/common/http';
-import { ThisReceiver } from '@angular/compiler';
-import { RouterLink } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
-  apiURL = "http://localhost:8080/api/v1/usuarios"
-  constructor(private http:HttpClient) { }
+  private apiURL = "http://localhost:8080/api/v1/usuarios";
 
-  getUsuarios(){
+  constructor(private http: HttpClient) {}
+
+  getUsuarios(): Observable<Usuario[]> {
     return this.http.get<Usuario[]>(this.apiURL);
   }
-  getUsuarioById(id: any){
-    return this.http.get<Usuario>(this.apiURL + '/' + id);
-    
 
+  getUsuarioById(id: number | string): Observable<Usuario> {
+    return this.http.get<Usuario>(`${this.apiURL}/${id}`);
   }
-  saveUsuario(usuario:Usuario){
-    if(usuario.id){
-      return this.http.put(this.apiURL + '/' + usuario.id, usuario);
+
+  saveUsuario(usuario: Usuario): Observable<Usuario> {
+    if (usuario.id) {
+      return this.http.put<Usuario>(`${this.apiURL}/${usuario.id}`, usuario);
     }
-    return this.http.post(this.apiURL,usuario);
+    return this.http.post<Usuario>(this.apiURL, usuario);
   }
 
-  excluirUsuario(id: any){
-    return this.http.delete<Usuario>(this.apiURL + '/' + id);
+  excluirUsuario(id: number | string): Observable<void> {
+    return this.http.delete<void>(`${this.apiURL}/${id}`);
   }
-
-
 }

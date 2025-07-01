@@ -1,8 +1,48 @@
-<main>
-    
+<main class="container">
     <h2>Amizades</h2>
-    
-    <table class="table"></table>
-
-
+    <button (click)="novo()" class="btn btn-primary mb-3">Nova</button>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Solicitante</th>
+                <th>Solicitado</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let amizade of listaAmizades; trackBy: trackByAmizade">
+                <td>{{ amizade.id }}</td>
+                <td>{{ amizade.solicitante?.nome }}</td>
+                <td>{{ amizade.solicitado?.nome }}</td>
+                <td>{{ amizade.status }}</td>
+                <td>
+                    <button (click)="alterar(amizade)" class="btn btn-secondary btn-sm" [attr.aria-label]="'Alterar amizade ' + amizade.id">Alterar</button>
+                    &nbsp;
+                    <button (click)="abrirConfirmacao(amizade)" class="btn btn-danger btn-sm" [attr.aria-label]="'Excluir amizade ' + amizade.id">Excluir</button>
+                </td>
+            </tr>
+            <tr *ngIf="listaAmizades.length === 0">
+                <td colspan="5" class="text-center">Nenhuma amizade encontrada.</td>
+            </tr>
+        </tbody>
+    </table>
 </main>
+
+<div class="modal fade" #myModal tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Excluir amizade</h5>
+            </div>
+            <div class="modal-body">
+                Confirma a exclusão da amizade?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+                <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
+            </div>
+        </div>
+    </div>
+</div>
