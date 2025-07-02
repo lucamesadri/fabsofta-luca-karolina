@@ -1,0 +1,47 @@
+<main class="container">
+    <h2>Resenhas</h2>
+    <button (click)="novo()" class="btn btn-primary mb-3">Nova</button>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Usuário</th>
+                <th>Filme</th>
+                <th>Texto</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let resenha of listaResenhas; trackBy: trackByResenha">
+                <td>{{ resenha.usuario?.nome }}</td>
+                <td>
+                    {{ resenha.filme?.titulo }}
+                </td>
+                <td>{{ resenha.texto }}</td>
+                <td>
+                    <button (click)="alterar(resenha)" class="btn btn-secondary btn-sm">Alterar</button>
+                    <button (click)="abrirConfirmacao(resenha)" class="btn btn-danger btn-sm">Excluir</button>
+                </td>
+            </tr>
+            <tr *ngIf="listaResenhas.length === 0">
+                <td colspan="4" class="text-center">Nenhuma resenha encontrada.</td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+
+<div class="modal fade" #myModal tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Excluir resenha</h5>
+            </div>
+            <div class="modal-body">
+                Confirma a exclusão da resenha?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+                <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
+            </div>
+        </div>
+    </div>
+</div>

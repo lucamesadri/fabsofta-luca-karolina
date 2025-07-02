@@ -9,5 +9,4 @@ public interface FilmeService {
     List<Filme> getAll();
     Filme getById(long id);
     Filme delete(long id);
-
 }

@@ -15,7 +15,7 @@ import br.univille.projfabsoft_sistemadefilmes.entity.Usuario;
 import br.univille.projfabsoft_sistemadefilmes.service.UsuarioService;
 
 @RestController
-@RequestMapping("/api/v1/usuario")
+@RequestMapping("/api/v1/usuarios")
 
 public class UsuarioController {
 
@@ -23,9 +23,15 @@ public class UsuarioController {
     private UsuarioService service;
 
     @GetMapping
-    public ResponseEntity<List<Usuario>> getUsuarios(){
+    public ResponseEntity<List<Usuario>> getUsuario(){
         var listaUsuarios = service.getAll();
         return new ResponseEntity<List<Usuario>>(listaUsuarios, HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Usuario> getUsuarioId(@PathVariable Long id){
+        var usuario = service.getById(id);
+        return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
     }
 
 @PostMapping

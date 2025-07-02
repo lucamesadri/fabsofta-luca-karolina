@@ -1,0 +1,12 @@
+<h2 class="text-center">Estatísticas do Sistema</h2>
+<div class="d-flex justify-content-center">
+  <div style="max-width: 1000px; width: 100%;">
+    <canvas baseChart
+            [datasets]="chartData.datasets"
+            [labels]="chartData.labels"
+            [options]="chartOptions"
+            [legend]="true"
+            [type]="'bar'">
+    </canvas>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<main class="container">
+  <h2>Avaliação</h2>
+  <div class="card">
+    <div class="card-body">
+      <form #avaliacaoForm="ngForm" (ngSubmit)="salvar()" autocomplete="off">
+        <div class="form-group mb-2">
+          <label for="usuario">Usuário</label>
+          <select [(ngModel)]="avaliacao.usuario" name="usuario" class="form-control" id="usuario" required>
+            <option [ngValue]="null" disabled selected>Selecione o usuário</option>
+            <option *ngFor="let usuario of usuarios" [ngValue]="usuario">{{ usuario.nome }}</option>
+          </select>
+        </div>
+        <div class="form-group mb-2">
+          <label for="filme">Filme</label>
+          <select [(ngModel)]="avaliacao.filme" name="filme" class="form-control" id="filme" required>
+            <option [ngValue]="null" disabled selected>Selecione o filme</option>
+            <option *ngFor="let filme of filmes" [ngValue]="filme">{{ filme.titulo }}</option>
+          </select>
+        </div>
+        <div class="form-group mb-2">
+          <label for="nota">Nota</label>
+          <input type="number" [(ngModel)]="avaliacao.nota" name="nota" class="form-control" id="nota" min="0" max="10" required>
+        </div>
+        <div class="form-group mb-2">
+          <label for="comentario">Comentário</label>
+          <textarea [(ngModel)]="avaliacao.comentario" name="comentario" class="form-control" id="comentario" required></textarea>
+        </div>
+        <button [disabled]="avaliacaoForm.invalid" class="btn btn-primary">Salvar</button>
+        <button type="button" class="btn btn-secondary ms-2" (click)="voltar()">Cancelar</button>
+      </form>
+    </div>
+  </div>
+</main>

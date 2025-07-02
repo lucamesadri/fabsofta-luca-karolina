@@ -1,0 +1,34 @@
+<main class="container">
+  <h2>Amizade</h2>
+  <div class="card">
+    <div class="card-body">
+      <form #amizadeForm="ngForm" (ngSubmit)="salvar()" autocomplete="off">
+        <div class="form-group mb-2">
+          <label for="solicitante">Solicitante</label>
+          <select [(ngModel)]="amizade.solicitante" name="solicitante" class="form-control" id="solicitante" required>
+            <option [ngValue]="null" disabled selected>Selecione o solicitante</option>
+            <option *ngFor="let usuario of usuarios" [ngValue]="usuario">{{ usuario.nome }}</option>
+          </select>
+        </div>
+        <div class="form-group mb-2">
+          <label for="solicitado">Solicitado</label>
+          <select [(ngModel)]="amizade.solicitado" name="solicitado" class="form-control" id="solicitado" required>
+            <option [ngValue]="null" disabled selected>Selecione o solicitado</option>
+            <option *ngFor="let usuario of usuarios" [ngValue]="usuario">{{ usuario.nome }}</option>
+          </select>
+        </div>
+        <div class="form-group mb-2">
+          <label for="status">Status</label>
+          <select [(ngModel)]="amizade.status" name="status" class="form-control" id="status" required>
+            <option [ngValue]="null" disabled selected>Selecione o status</option>
+            <option value="pendente">Pendente</option>
+            <option value="aceito">Aceito</option>
+            <option value="recusado">Recusado</option>
+          </select>
+        </div>
+        <button [disabled]="amizadeForm.invalid" class="btn btn-primary">Salvar</button>
+        <button type="button" class="btn btn-secondary ms-2" (click)="voltar()">Cancelar</button>
+      </form>
+    </div>
+  </div>
+</main>

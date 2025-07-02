@@ -1,5 +1,6 @@
 package br.univille.projfabsoft_sistemadefilmes.controller;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,8 +13,15 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.http.MediaType;
+
 import br.univille.projfabsoft_sistemadefilmes.entity.Filme;
 import br.univille.projfabsoft_sistemadefilmes.service.FilmeService;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 
 @RestController
@@ -78,4 +86,13 @@ public class FilmeController {
         return new ResponseEntity<Filme>(FilmeExcluido,HttpStatus.OK);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Filme> getFilmeById(@PathVariable long id) {
+        Filme filme = service.getById(id);
+        if (filme != null) {
+            return ResponseEntity.ok(filme);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }

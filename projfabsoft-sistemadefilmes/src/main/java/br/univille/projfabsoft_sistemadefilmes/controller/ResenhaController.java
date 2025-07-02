@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import br.univille.projfabsoft_sistemadefilmes.entity.Filme;
 import br.univille.projfabsoft_sistemadefilmes.entity.Resenha;
 import br.univille.projfabsoft_sistemadefilmes.service.ResenhaService;
 
@@ -65,5 +66,14 @@ public class ResenhaController {
 
         service.delete(id);
         return new ResponseEntity<>(resenhaExcluida, HttpStatus.OK);
+    }
+    @GetMapping("/{id}")
+    public ResponseEntity<Resenha> getResenhaById(@PathVariable long id) {
+        Resenha resenha = service.getById(id);
+        if (resenha != null) {
+            return ResponseEntity.ok(resenha);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }

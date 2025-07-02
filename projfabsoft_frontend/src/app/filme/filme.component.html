@@ -1,0 +1,48 @@
+<main class="container">
+    <h2>Filmes</h2>
+    <button (click)="novo()" class="btn btn-primary mb-3">Novo</button>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Gênero</th>
+                <th>Ano</th>
+                <th>Elenco</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let filme of listaFilmes; trackBy: trackByFilme">
+                <td>{{ filme.titulo }}</td>
+                <td>{{ filme.genero }}</td>
+                <td>{{ filme.anoLancamento }}</td>
+                <td>{{ filme.elenco }}</td>
+                <td>
+                    <button (click)="alterar(filme)" class="btn btn-secondary btn-sm" [attr.aria-label]="'Alterar filme ' + filme.titulo">Alterar</button>
+                    &nbsp;
+                    <button (click)="abrirConfirmacao(filme)" class="btn btn-danger btn-sm" [attr.aria-label]="'Excluir filme ' + filme.titulo">Excluir</button>
+                </td>
+            </tr>
+            <tr *ngIf="listaFilmes.length === 0">
+                <td colspan="5" class="text-center">Nenhum filme encontrado.</td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+
+<div class="modal fade" #myModal tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Excluir filme</h5>
+            </div>
+            <div class="modal-body">
+                Confirma a exclusão do filme?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+                <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
+            </div>
+        </div>
+    </div>
+</div>

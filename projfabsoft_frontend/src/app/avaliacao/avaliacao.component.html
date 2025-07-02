@@ -1,0 +1,48 @@
+<main class="container">
+    <h2>Avaliações</h2>
+    <button (click)="novo()" class="btn btn-primary mb-3">Nova</button>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Usuário</th>
+                <th>Filme</th>
+                <th>Nota</th>
+                <th>Comentário</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let avaliacao of listaAvaliacoes; trackBy: trackByAvaliacao">
+                <td>{{ avaliacao.usuario?.nome }}</td>
+                <td>{{ avaliacao.filme?.titulo }}</td>
+                <td>{{ avaliacao.nota }}</td>
+                <td>{{ avaliacao.comentario }}</td>
+                <td>
+                    <button (click)="alterar(avaliacao)" class="btn btn-secondary btn-sm" [attr.aria-label]="'Alterar avaliação ' + avaliacao.id">Alterar</button>
+                    &nbsp;
+                    <button (click)="abrirConfirmacao(avaliacao)" class="btn btn-danger btn-sm" [attr.aria-label]="'Excluir avaliação ' + avaliacao.id">Excluir</button>
+                </td>
+            </tr>
+            <tr *ngIf="listaAvaliacoes.length === 0">
+                <td colspan="5" class="text-center">Nenhuma avaliação encontrada.</td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+
+<div class="modal fade" #myModal tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Excluir avaliação</h5>
+            </div>
+            <div class="modal-body">
+                Confirma a exclusão da avaliação?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+                <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
+            </div>
+        </div>
+    </div>
+</div>

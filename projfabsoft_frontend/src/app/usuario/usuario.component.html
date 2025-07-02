@@ -1,0 +1,44 @@
+<main class="container">
+    <h2>Usuários</h2>
+    <button (click)="novo()" class="btn btn-primary mb-3">Novo</button>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umUsuario of listaUsuarios">
+                <td>{{ umUsuario.nome }}</td>
+                <td>{{ umUsuario.email }}</td>
+                <td>
+                    <button (click)="alterar(umUsuario)" class="btn btn-secondary btn-sm" [attr.aria-label]="'Alterar ' + umUsuario.nome">Alterar</button>
+                    &nbsp;
+                    <button (click)="abrirConfirmacao(umUsuario)" class="btn btn-danger btn-sm" [attr.aria-label]="'Excluir ' + umUsuario.nome">Excluir</button>
+                </td>
+            </tr>
+            <tr *ngIf="listaUsuarios.length === 0">
+                <td colspan="3" class="text-center">Nenhum usuário encontrado.</td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+
+<div class="modal fade" #myModal tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Excluir usuário</h5>
+            </div>
+            <div class="modal-body">
+                Confirma a exclusão do usuário?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+                <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
+            </div>
+        </div>
+    </div>
+</div>

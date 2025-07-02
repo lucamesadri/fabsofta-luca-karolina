@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import br.univille.projfabsoft_sistemadefilmes.entity.Amizade;
+import br.univille.projfabsoft_sistemadefilmes.entity.Resenha;
 import br.univille.projfabsoft_sistemadefilmes.service.AmizadeService;
 
 @RestController
@@ -64,5 +65,14 @@ public class AmizadeController {
 
         service.delete(id);
         return new ResponseEntity<>(amizadeExcluida, HttpStatus.OK);
+    }
+    @GetMapping("/{id}")
+    public ResponseEntity<Amizade> getAmizadeById(@PathVariable long id) {
+        Amizade amizade = service.getById(id);
+        if (amizade != null) {
+            return ResponseEntity.ok(amizade);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }
