@@ -9,6 +9,7 @@ import { ResenhaComponent } from './resenha/resenha.component';
 import { FormResenhaComponent } from './form-resenha/form-resenha.component';
 import { AvaliacaoComponent } from './avaliacao/avaliacao.component';
 import { FormAvaliacaoComponent } from './form-avaliacao/form-avaliacao.component';
+import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
     {path: 'usuarios', component: UsuarioComponent},
@@ -25,5 +26,6 @@ export const routes: Routes = [
     { path: 'resenhas/alterar/:id', component: FormResenhaComponent },
     { path: 'avaliacoes', component: AvaliacaoComponent },
     { path: 'avaliacoes/novo', component: FormAvaliacaoComponent },
-    { path: 'avaliacoes/alterar/:id', component: FormAvaliacaoComponent }
+    { path: 'avaliacoes/alterar/:id', component: FormAvaliacaoComponent },
+    { path: '', component: HomeComponent }
 ];
